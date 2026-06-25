@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Syne, DM_Sans } from "next/font/google";
+import CustomCursor from "./components/motion/CustomCursor";
 import "./globals.css";
 
 const syne = Syne({
@@ -18,6 +19,10 @@ export const metadata: Metadata = {
   title: "Fahad Ur Rehman — Frontend Engineer",
   description:
     "Frontend Engineer from Lahore, Pakistan. React, React Native, TypeScript, and building polished user experiences.",
+  icons: {
+    icon: "/fahad.jpg",
+    apple: "/fahad.jpg",
+  },
   openGraph: {
     title: "Fahad Ur Rehman — Frontend Engineer",
     description:
@@ -25,8 +30,6 @@ export const metadata: Metadata = {
     images: ["/fahad.png"],
   },
 };
-
-import CustomCursor from "./components/motion/CustomCursor";
 
 export default function RootLayout({
   children,

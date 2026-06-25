@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import type { ReactNode } from "react";
 
-type ArrowVariant = "right" | "external" | "down";
+type ArrowVariant = "right" | "external" | "down" | "up";
 
 interface ArrowIconProps {
   variant?: ArrowVariant;
@@ -38,6 +38,12 @@ function ArrowPaths({ variant }: { variant: ArrowVariant }) {
         <polyline points="7,11 12,16 17,11" fill="none" {...strokeProps} />
       </>
     ),
+    up: (
+      <>
+        <line x1="12" y1="19" x2="12" y2="9" {...strokeProps} />
+        <polyline points="7,13 12,8 17,13" fill="none" {...strokeProps} />
+      </>
+    ),
   };
 
   return <>{paths[variant]}</>;
@@ -56,7 +62,7 @@ export default function ArrowIcon({
       fill="none"
       className={`shrink-0 ${className}`}
       aria-hidden="true"
-      whileHover={{ x: variant === "down" ? 0 : 3, y: variant === "down" ? 3 : 0 }}
+      whileHover={{ x: variant === "down" ? 0 : variant === "up" ? 0 : 3, y: variant === "down" ? 3 : variant === "up" ? -3 : 0 }}
       transition={{ type: "spring", stiffness: 400, damping: 25 }}
     >
       <ArrowPaths variant={variant} />

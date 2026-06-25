@@ -7,11 +7,13 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import BackgroundEffects from "./components/motion/BackgroundEffects";
 import ScrollProgress from "./components/motion/ScrollProgress";
+import ScrollToTop from "./components/motion/ScrollToTop";
 
 export default function Home() {
   return (
     <>
       <ScrollProgress />
+      <ScrollToTop />
       <BackgroundEffects />
       <Header />
       <main className="relative z-10">
