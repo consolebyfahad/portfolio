@@ -3,15 +3,14 @@
 import { motion } from "framer-motion";
 
 const orbs = [
-  { size: 400, x: "10%", y: "15%", color: "rgba(200, 245, 66, 0.07)", duration: 18 },
-  { size: 300, x: "75%", y: "10%", color: "rgba(200, 245, 66, 0.05)", duration: 22 },
-  { size: 500, x: "60%", y: "60%", color: "rgba(100, 200, 255, 0.04)", duration: 25 },
-  { size: 250, x: "5%", y: "70%", color: "rgba(200, 245, 66, 0.06)", duration: 20 },
+  { size: 480, x: "8%", y: "20%", color: "rgba(255, 255, 255, 0.04)", duration: 22 },
+  { size: 360, x: "70%", y: "10%", color: "rgba(255, 255, 255, 0.035)", duration: 26 },
+  { size: 520, x: "50%", y: "60%", color: "rgba(255, 255, 255, 0.03)", duration: 30 },
 ];
 
 export default function FloatingOrbs() {
   return (
-    <div className="pointer-events-none fixed inset-0 overflow-hidden" aria-hidden="true">
+    <div className="absolute inset-0 overflow-hidden" aria-hidden="true">
       {orbs.map((orb, i) => (
         <motion.div
           key={i}
@@ -25,7 +24,7 @@ export default function FloatingOrbs() {
           }}
           animate={{
             x: [0, 30, -20, 0],
-            y: [0, -40, 20, 0],
+            y: [0, -40, 25, 0],
             scale: [1, 1.1, 0.95, 1],
           }}
           transition={{

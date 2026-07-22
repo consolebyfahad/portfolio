@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import { Syne, DM_Sans } from "next/font/google";
+import { Bebas_Neue, DM_Sans } from "next/font/google";
 import CustomCursor from "./components/motion/CustomCursor";
 import "./globals.css";
 
-const syne = Syne({
-  variable: "--font-syne",
+const bebas = Bebas_Neue({
+  variable: "--font-bebas",
   subsets: ["latin"],
-  weight: ["400", "600", "700", "800"],
+  weight: "400",
 });
 
 const dmSans = DM_Sans({
@@ -20,8 +20,9 @@ export const metadata: Metadata = {
   description:
     "Frontend Engineer from Lahore, Pakistan. React, React Native, TypeScript, and building polished user experiences.",
   icons: {
-    icon: "/fahad.jpg",
-    apple: "/fahad.jpg",
+    icon: [{ url: "/favicon.jpg", type: "image/jpeg" }],
+    apple: "/favicon.jpg",
+    shortcut: "/favicon.jpg",
   },
   openGraph: {
     title: "Fahad Ur Rehman — Frontend Engineer",
@@ -37,7 +38,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${syne.variable} ${dmSans.variable} h-full`}>
+    <html lang="en" className={`${bebas.variable} ${dmSans.variable} h-full`}>
       <body className="min-h-full antialiased">
         <CustomCursor />
         {children}

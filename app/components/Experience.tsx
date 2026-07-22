@@ -2,81 +2,61 @@
 
 import { motion } from "framer-motion";
 import { experience } from "../data/portfolio";
-import SectionHeading from "./motion/SectionHeading";
-import Tilt3D from "./motion/Tilt3D";
-import { slideInLeft, staggerContainer, easeOut, viewportOnce } from "../lib/motion";
+import { fadeUp, staggerContainer, easeOut, viewportOnce } from "../lib/motion";
 
 export default function Experience() {
   return (
-    <motion.section
-      id="experience"
-      className="relative border-t border-card-border py-24"
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      viewport={viewportOnce}
-      transition={{ duration: 0.5 }}
-    >
-      <div className="mx-auto max-w-6xl px-6">
-        <SectionHeading label="Career" title="Experience" />
+    <section id="experience" className="site-section relative bg-[#050505]">
+      <div className="site-shell">
+        <motion.div
+          initial={{ opacity: 0, y: 28 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={viewportOnce}
+          transition={easeOut}
+          className="mb-12 sm:mb-16"
+        >
+          <p className="section-kicker mb-5">Career</p>
+          <h2 className="section-display">Experience</h2>
+        </motion.div>
 
         <motion.div
-          className="flex flex-col gap-8"
+          className="flex flex-col"
           initial="hidden"
           whileInView="visible"
           viewport={viewportOnce}
           variants={staggerContainer}
         >
-          {experience.map((item, i) => (
-            <motion.div
+          {experience.map((item) => (
+            <motion.article
               key={item.title}
-              className="relative flex gap-6 border-l-2 border-card-border pl-8"
-              variants={slideInLeft}
-              transition={{ ...easeOut, delay: i * 0.12 }}
+              className="group grid gap-4 border-t border-white/10 py-10 sm:grid-cols-[10rem_1fr] sm:gap-12 lg:grid-cols-[12rem_1fr]"
+              variants={fadeUp}
+              transition={easeOut}
             >
-              <motion.div
-                className="absolute -left-[9px] top-1 h-4 w-4 rounded-full border-2 border-accent bg-background"
-                initial={{ scale: 0, opacity: 0 }}
-                whileInView={{ scale: 1, opacity: 1 }}
-                transition={{ type: "spring", stiffness: 400, damping: 15, delay: 0.15 + i * 0.12 }}
-                viewport={viewportOnce}
-              />
-              <Tilt3D intensity={8} className="flex-1">
-                <motion.div
-                  className="rounded-2xl border border-card-border bg-card/80 p-8 backdrop-blur-sm"
-                  whileHover={{
-                    borderColor: "rgba(200, 245, 66, 0.3)",
-                    boxShadow: "0 20px 40px rgba(0, 0, 0, 0.4)",
-                  }}
-                >
-                  <div className="mb-3 flex flex-wrap items-baseline justify-between gap-2">
-                    <h3 className="font-[family-name:var(--font-syne)] text-lg font-bold text-foreground">
-                      {item.title}
-                    </h3>
-                    <motion.span
-                      className="text-sm font-medium text-accent"
-                      initial={{ opacity: 0, x: 20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 0.25 + i * 0.1, ...easeOut }}
-                      viewport={viewportOnce}
-                    >
-                      {item.period}
-                    </motion.span>
-                  </div>
-                  <p className="mb-4 text-sm font-semibold text-muted">{item.company}</p>
-                  <p className="mb-5 text-sm leading-relaxed text-muted">{item.description}</p>
-                  <ul className="flex flex-wrap gap-2">
-                    {item.tags.map((tag) => (
-                      <li key={tag}>
-                        <span className="tag">{tag}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </motion.div>
-              </Tilt3D>
-            </motion.div>
+              <p className="font-display text-3xl text-white/45 transition-colors group-hover:text-white/75 sm:text-4xl lg:text-5xl">
+                {item.period}
+              </p>
+              <div>
+                <h3 className="font-display text-4xl text-[#dedcd3] sm:text-5xl lg:text-6xl">
+                  {item.title}
+                </h3>
+                <p className="mt-2 text-base font-medium text-white/70 sm:text-lg">{item.company}</p>
+                <p className="mt-5 max-w-3xl text-base leading-relaxed text-white/55 sm:text-lg">
+                  {item.description}
+                </p>
+                <p className="mt-5">
+                  {item.tags.map((tag) => (
+                    <span key={tag} className="tag">
+                      {tag}
+                    </span>
+                  ))}
+                </p>
+              </div>
+            </motion.article>
           ))}
+          <div className="border-t border-white/10" />
         </motion.div>
       </div>
-    </motion.section>
+    </section>
   );
 }

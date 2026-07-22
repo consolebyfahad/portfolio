@@ -1,53 +1,18 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { motion, useMotionValue, useSpring } from "framer-motion";
+import { motion, useMotionValue, useSpring, AnimatePresence } from "framer-motion";
 
-const DOT_SPRING = { stiffness: 600, damping: 35, mass: 0.4 };
-const RING_SPRING = { stiffness: 160, damping: 20, mass: 0.6 };
-
-function CursorArrow({
-  size = 16,
-  className = "",
-}: {
-  size?: number;
-  className?: string;
-}) {
-  return (
-    <svg
-      width={size}
-      height={size}
-      viewBox="0 0 24 24"
-      fill="none"
-      aria-hidden="true"
-      className={className}
-    >
-      <line
-        x1="4"
-        y1="12"
-        x2="16"
-        y2="12"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-      />
-      <polyline
-        points="11,7 17,12 11,17"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
+const DOT_SPRING = { stiffness: 500, damping: 32, mass: 0.35 };
+const RING_SPRING = { stiffness: 140, damping: 22, mass: 0.55 };
+const LABEL_SPRING = { stiffness: 220, damping: 24, mass: 0.4 };
 
 export default function CustomCursor() {
   const [enabled, setEnabled] = useState(false);
   const [isPointer, setIsPointer] = useState(false);
   const [isClicking, setIsClicking] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
+  const [label, setLabel] = useState<string | null>(null);
 
   const mouseX = useMotionValue(-100);
   const mouseY = useMotionValue(-100);
@@ -56,6 +21,8 @@ export default function CustomCursor() {
   const dotY = useSpring(mouseY, DOT_SPRING);
   const ringX = useSpring(mouseX, RING_SPRING);
   const ringY = useSpring(mouseY, RING_SPRING);
+  const labelX = useSpring(mouseX, LABEL_SPRING);
+  const labelY = useSpring(mouseY, LABEL_SPRING);
 
   useEffect(() => {
     const finePointer = window.matchMedia("(pointer: fine)");
@@ -90,14 +57,21 @@ export default function CustomCursor() {
     const onOver = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
       const interactive = target.closest(
-        "a, button, input, textarea, select, label, [role='button']"
-      );
+        "a, button, input, textarea, select, label, [role='button'], .project-row, .hero-portrait-frame"
+      ) as HTMLElement | null;
       setIsPointer(!!interactive);
+
+      const labeled = target.closest("[data-cursor-label]") as HTMLElement | null;
+      setLabel(labeled?.getAttribute("data-cursor-label") ?? null);
     };
 
     const onDown = () => setIsClicking(true);
     const onUp = () => setIsClicking(false);
-    const onLeave = () => setIsVisible(false);
+    const onLeave = () => {
+      setIsVisible(false);
+      setLabel(null);
+      setIsPointer(false);
+    };
     const onEnter = () => setIsVisible(true);
 
     window.addEventListener("mousemove", onMove);
@@ -121,54 +95,51 @@ export default function CustomCursor() {
 
   return (
     <>
-      {/* Trailing ring */}
+      {/* Outer ring — hidden on any interactive hover */}
       <motion.div
         className="pointer-events-none fixed top-0 left-0 z-[9999]"
         style={{ x: ringX, y: ringY }}
         animate={{
-          opacity: isVisible ? (isPointer ? 1 : 0.45) : 0,
-          width: isPointer ? 54 : 40,
-          height: isPointer ? 54 : 40,
-          scale: isClicking ? 0.88 : 1,
+          opacity: isVisible && !isPointer && !label ? 0.35 : 0,
+          width: 36,
+          height: 36,
+          scale: isClicking ? 0.85 : 1,
         }}
-        transition={{ type: "spring", stiffness: 280, damping: 24 }}
+        transition={{ type: "spring", stiffness: 260, damping: 24 }}
       >
-        <div
-          className="-translate-x-1/2 -translate-y-1/2 absolute h-full w-full rounded-full border transition-colors duration-200"
-          style={{
-            borderWidth: isPointer ? 2 : 1.5,
-            borderColor: isPointer ? "var(--accent)" : "rgba(200, 245, 66, 0.35)",
-            boxShadow: isPointer ? "0 0 20px rgba(200, 245, 66, 0.25)" : "none",
-          }}
-        />
+        <div className="-translate-x-1/2 -translate-y-1/2 absolute h-full w-full rounded-full border border-white/70" />
       </motion.div>
 
-      {/* Arrow cursor — always visible */}
+      {/* Center dot — always visible when cursor is on screen */}
       <motion.div
         className="pointer-events-none fixed top-0 left-0 z-[10000]"
         style={{ x: dotX, y: dotY }}
         animate={{
-          opacity: isVisible ? 1 : 0,
-          scale: isClicking ? 0.75 : 1,
+          opacity: isVisible && !label ? 1 : 0,
+          scale: isClicking ? 0.7 : 1,
         }}
-        transition={{ type: "spring", stiffness: 500, damping: 30 }}
+        transition={{ type: "spring", stiffness: 480, damping: 28 }}
       >
-        <motion.div
-          className="-translate-x-1/2 -translate-y-1/2 flex items-center justify-center"
-          animate={{
-            width: isPointer ? 32 : 22,
-            height: isPointer ? 32 : 22,
-            backgroundColor: isPointer ? "var(--accent)" : "transparent",
-            borderRadius: isPointer ? "50%" : 4,
-          }}
-          transition={{ type: "spring", stiffness: 400, damping: 28 }}
-        >
-          <CursorArrow
-            size={isPointer ? 14 : 18}
-            className={isPointer ? "text-background" : "text-accent"}
-          />
-        </motion.div>
+        <div className="-translate-x-1/2 -translate-y-1/2 h-2 w-2 rounded-full bg-white" />
       </motion.div>
+
+      {/* Hover label pill (e.g. View LinkedIn Profile) */}
+      <AnimatePresence>
+        {label && isVisible && (
+          <motion.div
+            className="pointer-events-none fixed top-0 left-0 z-[10001]"
+            style={{ x: labelX, y: labelY }}
+            initial={{ opacity: 0, scale: 0.85 }}
+            animate={{ opacity: 1, scale: isClicking ? 0.94 : 1 }}
+            exit={{ opacity: 0, scale: 0.85 }}
+            transition={{ type: "spring", stiffness: 320, damping: 24 }}
+          >
+            <div className="-translate-x-1/2 -translate-y-1/2 whitespace-nowrap rounded-xl bg-[#d8d6cf] px-4 py-2.5 text-[13px] font-semibold tracking-tight text-[#111111] shadow-[0_8px_30px_rgba(0,0,0,0.35)]">
+              {label}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 }

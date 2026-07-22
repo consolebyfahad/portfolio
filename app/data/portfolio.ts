@@ -12,32 +12,36 @@ export const personal = {
   profileImage: "/fahad.png",
 };
 
-export const navLinks = [
-  { label: "Skills", href: "#skills" },
-  { label: "My Work", href: "#work" },
-  { label: "Experience", href: "#experience" },
-  { label: "Contact", href: "#contact" },
-];
+export const about = {
+  headline: "I BUILD INTERFACES, SHIP PRODUCTS, CRAFT EXPERIENCES.",
+  paragraphs: [
+    "I specialize in crafting polished web and mobile interfaces with React, React Native, and TypeScript. I'm passionate about building software that feels fast, clear, and intentional.",
+    "As a Frontend Engineer at Axon Technologies, I ship cross-platform apps with Redux, Expo, and thoughtful UX — turning product ideas into interfaces people actually enjoy using.",
+    "When I'm away from the keyboard, I'm usually exploring new UI patterns, refining side projects, or recharging for the next build.",
+  ],
+};
 
-export const skills = [
-  { name: "TypeScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" },
-  { name: "React", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
-  { name: "React Native", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
-  { name: "Next.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" },
-  { name: "JavaScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
-  { name: "Redux", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg" },
-  { name: "Expo", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
-  { name: "Tailwind", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" },
-  { name: "Node.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
-  { name: "HTML5", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
-  { name: "CSS3", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
+export const skillGroups = [
+  {
+    title: "Frontend Tools",
+    items:
+      "JavaScript (ES6+), TypeScript, React, React Native, Next.js, Redux, Expo, HTML5, Git/GitHub",
+  },
+  {
+    title: "Backend Tools",
+    items: "Node.js, REST APIs, Express-style services, API integrations",
+  },
+  {
+    title: "UI Libraries",
+    items: "CSS3, Tailwind CSS, Framer Motion, Responsive Design, Component Systems",
+  },
 ];
 
 export const projects = [
   {
     title: "Osstel Platform",
     description:
-      "A full-stack platform with web, admin dashboard, and backend services — built for scalable product workflows and real-time management.",
+      "Full-stack platform with web, admin dashboard, and backend services for scalable product workflows.",
     tags: ["TypeScript", "React", "Node.js", "Vercel"],
     url: "https://osstel.vercel.app",
     github: "https://github.com/consolebyfahad/osstel-web",
@@ -45,7 +49,7 @@ export const projects = [
   {
     title: "Netflix 2.0",
     description:
-      "A Netflix clone with responsive design, Redux state management, dynamic movie browsing, and API-driven content — replicating the core streaming experience.",
+      "Streaming-inspired clone with Redux, dynamic browsing, and API-driven content.",
     tags: ["React", "Tailwind CSS", "Redux", "JavaScript"],
     url: null,
     github: "https://github.com/consolebyfahad/netflix",
@@ -53,15 +57,15 @@ export const projects = [
   {
     title: "Gemini 2.0",
     description:
-      "A Gemini-inspired web app with responsive layout, dark mode, dynamic sidebar, and Context API — showcasing modern React patterns and UX polish.",
-    tags: ["React", "Tailwind CSS", "Context API", "JavaScript"],
+      "AI chat UI with dark mode, dynamic sidebar, and Context API patterns.",
+    tags: ["React", "Tailwind CSS", "Context API"],
     url: null,
     github: "https://github.com/consolebyfahad/gemini-2.0",
   },
   {
     title: "Bingo Baker",
     description:
-      "A customizable bingo card maker for generating and printing personalized cards — ideal for events, classrooms, and casual games.",
+      "Customizable bingo card maker for events, classrooms, and casual games.",
     tags: ["JavaScript", "HTML", "CSS"],
     url: null,
     github: "https://github.com/consolebyfahad/Bingo-Baker",
@@ -69,7 +73,7 @@ export const projects = [
   {
     title: "CrushPoint",
     description:
-      "A cross-platform application built with TypeScript, focused on delivering a smooth and engaging mobile-first user experience.",
+      "Cross-platform TypeScript app focused on smooth mobile-first UX.",
     tags: ["TypeScript", "React Native", "Mobile"],
     url: null,
     github: "https://github.com/consolebyfahad/CrushPoint",
@@ -77,8 +81,8 @@ export const projects = [
   {
     title: "Personal Portfolio",
     description:
-      "This portfolio — crafted with Next.js, TypeScript, and Tailwind CSS. Designed for performance, accessibility, and a clean developer presence.",
-    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Vercel"],
+      "This site — Next.js, TypeScript, and Tailwind, built for clarity and craft.",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS"],
     url: null,
     github: "https://github.com/consolebyfahad/rehmanfahad",
   },

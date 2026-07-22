@@ -35,15 +35,11 @@ export default function SocialLinks({ className = "" }: { className?: string }) 
           rel="noopener noreferrer"
           className="social-icon"
           aria-label={link.label}
-          whileHover={{
-            scale: 1.15,
-            y: -3,
-            rotateY: 15,
-            color: "var(--accent)",
-            borderColor: "var(--accent)",
-          }}
-          whileTap={{ scale: 0.9 }}
-          style={{ transformStyle: "preserve-3d" }}
+          data-cursor-label={
+            link.href.includes("linkedin") ? "View LinkedIn Profile" : "View GitHub Profile"
+          }
+          whileHover={{ scale: 1.1, y: -2 }}
+          whileTap={{ scale: 0.92 }}
         >
           {link.icon}
         </motion.a>
