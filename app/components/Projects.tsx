@@ -16,7 +16,6 @@ export default function Projects() {
           transition={easeOut}
           className="mb-12 sm:mb-16"
         >
-          <p className="section-kicker mb-5">Selected Work</p>
           <h2 className="section-display">Projects</h2>
         </motion.div>
 

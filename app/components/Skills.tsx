@@ -6,7 +6,7 @@ import { fadeUp, staggerContainer, easeOut, viewportOnce } from "../lib/motion";
 
 export default function Skills() {
   return (
-    <section id="skills" className="site-section relative bg-[#050505]">
+    <section id="skills" className="site-section relative mt-20 bg-[#050505] sm:mt-28 lg:mt-32">
       <div className="site-shell">
         <motion.h2
           className="about-headline"

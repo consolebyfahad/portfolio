@@ -1,27 +1,21 @@
+import dynamic from "next/dynamic";
 import Hero from "./components/Hero";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
-import Experience from "./components/Experience";
-import Contact from "./components/Contact";
 import Footer from "./components/Footer";
-import BackgroundEffects from "./components/motion/BackgroundEffects";
-import ScrollProgress from "./components/motion/ScrollProgress";
-import ScrollToTop from "./components/motion/ScrollToTop";
+
+const Experience = dynamic(() => import("./components/Experience"));
+const Testimonials = dynamic(() => import("./components/Testimonials"));
 
 export default function Home() {
   return (
-    <>
-      <ScrollProgress />
-      <ScrollToTop />
-      <BackgroundEffects />
-      <main className="relative z-10">
-        <Hero />
-        <Skills />
-        <Projects />
-        <Experience />
-        <Contact />
-      </main>
+    <main className="relative z-10">
+      <Hero />
+      <Skills />
+      <Projects />
+      <Experience />
+      <Testimonials />
       <Footer />
-    </>
+    </main>
   );
 }

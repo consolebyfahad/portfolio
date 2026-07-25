@@ -20,7 +20,7 @@
   --color-card: var(--card);
   --color-card-border: var(--card-border);
   --font-sans: var(--font-dm-sans);
-  --font-display: var(--font-bebas);
+  --font-display: var(--font-archivo-black);
 }
 
 * {
@@ -39,6 +39,28 @@ body {
   overflow-x: hidden;
 }
 
+html.intro-active,
+html.intro-active body {
+  overflow: hidden;
+}
+
+.intro-word {
+  font-family:
+    var(--font-archivo-black),
+    "Noto Sans",
+    "Noto Sans Arabic",
+    "Noto Sans Devanagari",
+    "PingFang SC",
+    "Hiragino Sans",
+    "Apple SD Gothic Neo",
+    system-ui,
+    sans-serif;
+}
+
+.intro-word-last {
+  letter-spacing: 0.01em;
+}
+
 ::selection {
   background: #dedcd3;
   color: #050505;
@@ -52,11 +74,12 @@ body {
 }
 
 .site-section {
-  padding-block: clamp(6rem, 12vw, 11rem);
+  padding-block: 0;
+  margin-bottom: 8rem; /* 24px */
 }
 
 .font-display {
-  font-family: var(--font-bebas), system-ui, sans-serif;
+  font-family: var(--font-archivo-black), system-ui, sans-serif;
   text-transform: uppercase;
   letter-spacing: 0.015em;
 }
@@ -71,8 +94,8 @@ body {
 }
 
 .section-display {
-  font-family: var(--font-bebas), system-ui, sans-serif;
-  font-size: clamp(4.5rem, 12vw, 10.5rem);
+  font-family: var(--font-archivo-black), system-ui, sans-serif;
+  font-size: clamp(2.5rem, 10vw, 8.5rem);
   font-weight: 400;
   line-height: 0.88;
   letter-spacing: 0.01em;
@@ -123,8 +146,8 @@ body {
 }
 
 .hero-name {
-  font-family: var(--font-bebas), system-ui, sans-serif;
-  font-size: clamp(4.5rem, 16vw, 13rem);
+  font-family: var(--font-archivo-black), system-ui, sans-serif;
+  font-size: clamp(2.5rem, 14vw, 11rem);
   font-weight: 400;
   line-height: 0.82;
   letter-spacing: 0.005em;
@@ -156,8 +179,8 @@ body {
 
 /* ── About ── */
 .about-headline {
-  font-family: var(--font-bebas), system-ui, sans-serif;
-  font-size: clamp(2.75rem, 6.5vw, 5.5rem);
+  font-family: var(--font-archivo-black), system-ui, sans-serif;
+  font-size: clamp(1.5rem, 4.5vw, 3.5rem);
   font-weight: 400;
   line-height: 1.05;
   letter-spacing: 0.02em;
@@ -177,8 +200,8 @@ body {
 }
 
 .about-skill-title {
-  font-family: var(--font-bebas), system-ui, sans-serif;
-  font-size: clamp(1.75rem, 2.6vw, 2.4rem);
+  font-family: var(--font-archivo-black), system-ui, sans-serif;
+  font-size: clamp(1.1rem, 1.8vw, 1.4rem);
   font-weight: 400;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -195,6 +218,8 @@ body {
 
 /* ── Buttons ── */
 .btn-outline-light {
+  position: relative;
+  z-index: 0;
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
@@ -209,12 +234,70 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.85);
   border-radius: 0.4rem;
   cursor: pointer;
-  transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
+  transition:
+    color 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.btn-outline-light::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background: #dedcd3;
+  transform: scale(0.88);
+  opacity: 0;
+  transition:
+    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.35s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .btn-outline-light:hover {
-  background: #fff;
+  border-color: #dedcd3;
   color: #050505;
+}
+
+.btn-outline-light:hover::before {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.text-btn {
+  position: relative;
+  z-index: 0;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.35rem 0.7rem;
+  margin: -0.35rem -0.7rem;
+  border-radius: 0.55rem;
+  color: #dedcd3;
+  background: transparent;
+  transition: color 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.text-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background: #dedcd3;
+  transform: scale(0.88);
+  opacity: 0;
+  transition:
+    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.text-btn:hover {
+  color: #050505;
+  background: transparent;
+}
+
+.text-btn:hover::before {
+  transform: scale(1);
+  opacity: 1;
 }
 
 .btn-solid-light {
@@ -259,8 +342,8 @@ body {
 }
 
 .project-row-title {
-  font-family: var(--font-bebas), system-ui, sans-serif;
-  font-size: clamp(2.5rem, 5.5vw, 4.75rem);
+  font-family: var(--font-archivo-black), system-ui, sans-serif;
+  font-size: clamp(1.25rem, 3.5vw, 2.75rem);
   letter-spacing: 0.02em;
   text-transform: uppercase;
   color: var(--foreground);
@@ -332,6 +415,15 @@ body {
   color: rgba(222, 220, 211, 0.35);
 }
 
+.testimonial-scroller {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.testimonial-scroller::-webkit-scrollbar {
+  display: none;
+}
+
 html.custom-cursor-active,
 html.custom-cursor-active * {
   cursor: none !important;
@@ -341,8 +433,29 @@ html.custom-cursor-active * {
   backdrop-filter: blur(10px);
 }
 
+@keyframes orb-drift {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(24px, -32px) scale(1.06);
+  }
+  66% {
+    transform: translate(-18px, 20px) scale(0.97);
+  }
+}
+
+.orb-drift {
+  will-change: transform;
+  animation-name: orb-drift;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .hero-smoke-drift {
+  .hero-smoke-drift,
+  .orb-drift {
     animation: none;
   }
 

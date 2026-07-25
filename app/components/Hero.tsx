@@ -1,16 +1,44 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, useMotionValue, useSpring } from "framer-motion";
+import { useRef, type MouseEvent } from "react";
 import { personal } from "../data/portfolio";
 import Header from "./Header";
+import { MagneticPortrait } from "./motion/Magnetic";
 import { easeOut, popUpSpring, viewportHero } from "../lib/motion";
 
 export default function Hero() {
+  const stageRef = useRef<HTMLElement>(null);
+  const rawParallaxX = useMotionValue(0);
+  const rawParallaxY = useMotionValue(0);
+  const parallaxX = useSpring(rawParallaxX, { stiffness: 50, damping: 20 });
+  const parallaxY = useSpring(rawParallaxY, { stiffness: 50, damping: 20 });
+
+  function onStageMove(e: MouseEvent<HTMLElement>) {
+    const node = stageRef.current;
+    if (!node) return;
+    const rect = node.getBoundingClientRect();
+    const px = (e.clientX - rect.left) / rect.width - 0.5;
+    const py = (e.clientY - rect.top) / rect.height - 0.5;
+    rawParallaxX.set(px * 18);
+    rawParallaxY.set(py * 12);
+  }
+
+  function onStageLeave() {
+    rawParallaxX.set(0);
+    rawParallaxY.set(0);
+  }
+
   return (
-    <section className="hero-stage relative flex min-h-[100svh] flex-col overflow-hidden">
+    <section
+      ref={stageRef}
+      className="hero-stage relative flex min-h-[100svh] flex-col overflow-hidden"
+      onMouseMove={onStageMove}
+      onMouseLeave={onStageLeave}
+    >
       <div className="hero-smoke" aria-hidden="true" />
-      <div className="hero-smoke-drift" aria-hidden="true" />
+      <motion.div className="hero-smoke-drift" style={{ x: parallaxX, y: parallaxY }} aria-hidden="true" />
 
       <Header />
 
@@ -21,6 +49,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.95, ease: [0.22, 1, 0.36, 1] }}
+            style={{ x: parallaxX, y: parallaxY }}
           >
             <span className="block">Fahad</span>
             <span className="block">Ur Rehman</span>
@@ -32,20 +61,25 @@ export default function Hero() {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ ...popUpSpring, delay: 0.2 }}
           >
-            <button
-              type="button"
-              className="hero-portrait-frame group relative block aspect-square w-[min(42vw,200px)] overflow-hidden rounded-[1.75rem] bg-[#2a2a2a] outline-none sm:w-[250px] md:w-[300px] lg:w-[340px]"
-              aria-label={`${personal.name} portrait — hover to view in color`}
-            >
-              <Image
-                src={personal.profileImage}
-                alt={`${personal.name} portrait`}
-                fill
-                priority
-                sizes="(max-width: 768px) 200px, 340px"
-                className="hero-portrait-img object-cover object-top"
-              />
-            </button>
+            <MagneticPortrait range={48}>
+              <a
+                href="#lets-talk"
+                className="hero-portrait-frame group relative block aspect-square w-[min(42vw,200px)] overflow-hidden rounded-[1.75rem] bg-[#2a2a2a] outline-none sm:w-[250px] md:w-[300px] lg:w-[340px]"
+                aria-label="I'm open to work — contact me"
+                data-cursor-label="I'm Open to work — Contact me"
+                data-cursor-status="true"
+              >
+                <Image
+                  src={personal.profileImage}
+                  alt={`${personal.name} — Frontend Engineer, React and React Native developer`}
+                  fill
+                  priority
+                  sizes="(max-width: 768px) 200px, 340px"
+                  className="hero-portrait-img object-cover object-top"
+                  quality={80}
+                />
+              </a>
+            </MagneticPortrait>
           </motion.div>
         </div>
 
@@ -66,11 +100,11 @@ export default function Hero() {
               visible: { opacity: 1, y: 0, transition: easeOut },
             }}
           >
-            I currently work as a Frontend Engineer at{" "}
+            I currently work as a Frontend Engineer and React / React Native developer at{" "}
             <span className="underline decoration-white/40 underline-offset-4">
               {personal.company}
             </span>
-            , currently available for work.
+            , available for web and mobile work.
           </motion.p>
           <motion.p
             className="hero-blurb sm:ml-auto sm:text-right"

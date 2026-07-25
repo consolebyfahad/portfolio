@@ -15,7 +15,6 @@ export default function Experience() {
           transition={easeOut}
           className="mb-12 sm:mb-16"
         >
-          <p className="section-kicker mb-5">Career</p>
           <h2 className="section-display">Experience</h2>
         </motion.div>
 
@@ -33,11 +32,11 @@ export default function Experience() {
               variants={fadeUp}
               transition={easeOut}
             >
-              <p className="font-display text-3xl text-white/45 transition-colors group-hover:text-white/75 sm:text-4xl lg:text-5xl">
+              <p className="font-display text-xl text-white/45 transition-colors group-hover:text-white/75 sm:text-2xl lg:text-3xl">
                 {item.period}
               </p>
               <div>
-                <h3 className="font-display text-4xl text-[#dedcd3] sm:text-5xl lg:text-6xl">
+                <h3 className="font-display text-2xl text-[#dedcd3] sm:text-3xl lg:text-4xl">
                   {item.title}
                 </h3>
                 <p className="mt-2 text-base font-medium text-white/70 sm:text-lg">{item.company}</p>
