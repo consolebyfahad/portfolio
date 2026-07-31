@@ -100,11 +100,11 @@ export default function Hero() {
               visible: { opacity: 1, y: 0, transition: easeOut },
             }}
           >
-            I currently work as a Frontend Engineer and React / React Native developer at{" "}
+            I currently work as a Frontend Engineer at{" "}
             <span className="underline decoration-white/40 underline-offset-4">
               {personal.company}
             </span>
-            , available for web and mobile work.
+            , & I'm available for web and mobile work.
           </motion.p>
           <motion.p
             className="hero-blurb sm:ml-auto sm:text-right"

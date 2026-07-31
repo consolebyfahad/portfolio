@@ -42,50 +42,42 @@ export const projects = [
   {
     title: "Osstel Platform",
     description:
-      "Full-stack web platform with React, TypeScript, admin dashboard, and backend services for scalable product workflows.",
+      "Personal full-stack build — React, TypeScript, admin dashboard, and backend services, designed and shipped end to end for scalable product workflows.",
     tags: ["TypeScript", "React", "Node.js", "Vercel"],
     url: "https://osstel.vercel.app",
     github: "https://github.com/consolebyfahad/osstel-web",
   },
   {
-    title: "Netflix 2.0",
+    title: "Drill",
     description:
-      "React streaming UI clone with Redux state, dynamic browsing, and API-driven content layouts.",
-    tags: ["React", "Tailwind CSS", "Redux", "JavaScript"],
-    url: null,
-    github: "https://github.com/consolebyfahad/netflix",
+      "Personal React Native app built from scratch and published on Google Play — home services in Saudi Arabia with booking, tracking, and bilingual English/Arabic support.",
+    tags: ["React Native", "Mobile", "TypeScript", "Play Store"],
+    url: "https://play.google.com/store/apps/details?id=sa.com.drill.app",
+    github: null,
   },
   {
-    title: "Gemini 2.0",
+    title: "Panache",
     description:
-      "React AI chat interface with dark mode, dynamic sidebar, and Context API patterns.",
-    tags: ["React", "Tailwind CSS", "Context API"],
-    url: null,
-    github: "https://github.com/consolebyfahad/gemini-2.0",
+      "Personal dating product built from concept to live site — verified profiles, open search, and real meets, with a clean web experience at panache.love.",
+    tags: ["React", "Next.js", "TypeScript", "Mobile"],
+    url: "https://panache.love",
+    github: null,
   },
   {
-    title: "Bingo Baker",
+    title: "Ulexe",
     description:
-      "Lightweight web tool for customizable bingo cards — built with HTML, CSS, and JavaScript.",
-    tags: ["JavaScript", "HTML", "CSS"],
-    url: null,
-    github: "https://github.com/consolebyfahad/Bingo-Baker",
+      "Personal beauty booking platform from scratch to production — find pros, compare prices, and book waxing, nails, and more with instant confirmation.",
+    tags: ["React", "Next.js", "TypeScript", "Booking"],
+    url: "https://ulexe.com",
+    github: null,
   },
   {
     title: "CrushPoint",
     description:
-      "React Native mobile app focused on smooth TypeScript UX and cross-platform delivery.",
+      "Personal React Native app built end to end — TypeScript UX, smooth mobile flows, and cross-platform delivery owned from idea to release.",
     tags: ["TypeScript", "React Native", "Mobile"],
     url: null,
     github: "https://github.com/consolebyfahad/CrushPoint",
-  },
-  {
-    title: "Personal Portfolio",
-    description:
-      "Fahad Ur Rehman's portfolio — Next.js, TypeScript, and Tailwind for a fast frontend showcase.",
-    tags: ["Next.js", "TypeScript", "Tailwind CSS"],
-    url: null,
-    github: "https://github.com/consolebyfahad/rehmanfahad",
   },
 ];
 
@@ -97,6 +89,14 @@ export const experience = [
     description:
       "Frontend and React Native developer building scalable web and mobile apps with React, TypeScript, Redux, and Expo — including responsive UI, state management, and API integrations.",
     tags: ["React", "React Native", "TypeScript", "Redux", "Expo"],
+  },
+  {
+    title: "Associate Frontend Engineer",
+    company: "Techesthe",
+    period: "2023 - 2025",
+    description:
+      "Frontend and React Native developer building scalable web and mobile apps with React, TypeScript, Redux, and Expo — including responsive UI, state management, and API integrations.",
+    tags: ["React", "TypeScript", "Redux", "Expo"],
   },
   {
     title: "Bachelor's in Computer Science",
@@ -111,44 +111,44 @@ export const experience = [
 export const testimonials = [
   {
     quote:
-      "Fahad ships polished interfaces fast. The React Native work he delivered felt native, stable, and thoughtfully designed.",
-    name: "Ayesha Khan",
-    role: "Product Manager",
-    company: "Axon Technologies",
-  },
-  {
-    quote:
-      "Clean code, clear communication, and a strong eye for detail. Working with Fahad made our frontend delivery much smoother.",
+      "We needed Osstel live fast, and Fahad delivered. Communication was clear, the admin panel just works, and we didn’t have to chase fixes after launch.",
     name: "Hassan Ali",
-    role: "Engineering Lead",
+    role: "Client",
     company: "Osstel",
   },
   {
     quote:
-      "He turns rough ideas into refined UI quickly. Motion, spacing, and responsiveness were all handled with real craft.",
+      "Hiring Fahad for Drill was the right call. He handled everything from the app build to Play Store release. Our users love how smooth booking feels in both Arabic and English.",
+    name: "Sohaib Aljabawi",
+    role: "Client",
+    company: "Drill",
+  },
+  {
+    quote:
+      "Fahad understood what we wanted for Panache without endless meetings. The product feels trustworthy, and he kept us updated until it was live.",
     name: "Sara Malik",
-    role: "Design Partner",
-    company: "Looplex",
+    role: "Client",
+    company: "Panache",
   },
   {
     quote:
-      "Reliable, proactive, and excellent with TypeScript and Redux. Fahad elevated the quality of every screen he touched.",
-    name: "Omar Raza",
-    role: "CTO",
-    company: "Startup Collaborator",
-  },
-  {
-    quote:
-      "From architecture to micro-interactions, Fahad cares about the full experience. Highly recommend for frontend work.",
+      "Working with Fahad on Ulexe was easy. He took our beauty booking idea seriously, shipped on time, and the booking flow is exactly what our customers needed.",
     name: "Nina Ahmed",
-    role: "Founder",
-    company: "Indie Product",
+    role: "Client",
+    company: "Ulexe",
   },
   {
     quote:
-      "A strong collaborator who balances speed with quality. Our web and mobile apps looked sharper after every iteration.",
+      "Fahad is reliable and detail-oriented. On CrushPoint he owned the mobile UX end to end — we always knew where things stood, and the final app felt polished.",
+    name: "Omar Raza",
+    role: "Client",
+    company: "CrushPoint",
+  },
+  {
+    quote:
+      "Would happily work with Fahad again. He listens, builds what you ask for, and ships without drama. Great experience from kickoff to delivery.",
     name: "Bilal Hussain",
-    role: "Project Client",
-    company: "Remote Engagement",
+    role: "Client",
+    company: "Independent Project",
   },
 ];

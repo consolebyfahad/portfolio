@@ -22,7 +22,7 @@ export default function Header() {
             whileTap={{ scale: 0.98 }}
             transition={springSnappy}
           >
-            Book a Call
+            Let's Meet
           </motion.a>
         </Magnetic>
 
