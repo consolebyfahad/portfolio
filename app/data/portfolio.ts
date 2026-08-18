@@ -16,7 +16,7 @@ export const personal = {
 export const about = {
   headline: "I BUILD INTERFACES, SHIP PRODUCTS, CRAFT EXPERIENCES.",
   paragraphs: [
-    "I'm Fahad Ur Rehman, a frontend developer and React Native developer who builds fast web and mobile apps with React, Next.js, and TypeScript. I care about clear UX, clean code, and interfaces that feel intentional.",
+    "I'm Fahad, a frontend developer and React Native developer who builds fast web and mobile apps with React, Next.js, and TypeScript. I care about clear UX, clean code, and interfaces that feel intentional.",
     "As a Frontend Engineer at Axon Technologies, I ship cross-platform web and mobile products with Redux, Expo, and thoughtful UI — turning ideas into interfaces people enjoy using.",
     "When I'm away from the keyboard, I'm usually exploring new UI patterns, refining side projects, or recharging for the next build.",
   ],
