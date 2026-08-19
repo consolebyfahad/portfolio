@@ -23,9 +23,9 @@ const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL ??
   (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "https://fahadurrehman.vercel.app");
 
-const title = "Fahad Ur Rehman | Frontend, Web & React Native Developer";
+const title = "Fahad Ur Rehman | Senior Software Engineer — React, React Native & Node.js";
 const description =
-  "Fahad Ur Rehman is a Frontend Engineer and web & mobile developer from Lahore. Specializing in React, React Native, Next.js, and TypeScript — building fast, polished digital experiences.";
+  "I'm Fahad Ur Rehman — Senior Software Engineer with 5+ years building production web and mobile apps. React, React Native, TypeScript, Node.js, and full product delivery.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -40,20 +40,18 @@ export const metadata: Metadata = {
   publisher: "Fahad Ur Rehman",
   keywords: [
     "Fahad Ur Rehman",
-    "Fahad",
-    "Frontend Developer",
-    "Frontend Engineer",
-    "Web Developer",
-    "Mobile Developer",
+    "Senior Software Engineer",
+    "Full Stack Developer",
     "React Developer",
     "React Native Developer",
-    "Next.js Developer",
-    "TypeScript",
+    "Node.js Developer",
+    "Mobile App Developer",
+    "TypeScript Developer",
+    "JavaScript Developer",
     "Expo",
-    "UI Developer",
+    "REST APIs",
     "Lahore",
     "Pakistan",
-    "Portfolio",
   ],
   category: "technology",
   alternates: {
@@ -87,7 +85,7 @@ export const metadata: Metadata = {
         url: "/fahad.jpg",
         width: 800,
         height: 800,
-        alt: "Fahad Ur Rehman — Frontend, React & React Native Developer",
+        alt: "Fahad Ur Rehman — Senior Software Engineer, React and React Native",
       },
     ],
   },
@@ -125,7 +123,7 @@ const jsonLd = {
       alternateName: ["Fahad", "Fahad Rehman"],
       url: siteUrl,
       image: `${siteUrl}/fahad.jpg`,
-      jobTitle: "Frontend Engineer",
+      jobTitle: "Senior Software Engineer",
       description,
       email: "mailto:fahad00rehman@gmail.com",
       address: {
@@ -133,22 +131,31 @@ const jsonLd = {
         addressLocality: "Lahore",
         addressCountry: "PK",
       },
-      worksFor: {
-        "@type": "Organization",
-        name: "Axon Technologies",
-      },
+      worksFor: [
+        {
+          "@type": "Organization",
+          name: "Looplex",
+        },
+        {
+          "@type": "Organization",
+          name: "Axon Technologies",
+        },
+      ],
       knowsAbout: [
-        "Frontend Development",
+        "Full-Stack Development",
         "Web Development",
         "Mobile Development",
         "React",
         "React Native",
         "Next.js",
+        "Node.js",
         "TypeScript",
         "JavaScript",
+        "Express.js",
+        "REST APIs",
         "Expo",
         "Redux",
-        "UI Engineering",
+        "Software Architecture",
       ],
       sameAs: [
         "https://github.com/consolebyfahad",

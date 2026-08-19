@@ -1,11 +1,13 @@
 export const personal = {
   name: "Fahad Ur Rehman",
   initials: "fr",
-  tagline: "Frontend, web & React Native developer building polished products.",
-  bio: "Fahad Ur Rehman is a Frontend Engineer and web & mobile developer from Lahore, Pakistan — specializing in React, React Native, and TypeScript.",
+  tagline: "I build web and mobile products — frontend to backend, idea to production.",
+  bio: "I'm Fahad Ur Rehman, a Senior Software Engineer with 5+ years of experience shipping production web and mobile apps with React, React Native, TypeScript, and Node.js.",
   location: "Lahore, Pakistan",
   company: "Axon Technologies",
-  role: "Frontend Engineer",
+  secondaryCompany: "Looplex",
+  role: "Senior Software Engineer",
+  yearsExperience: "5+",
   email: "fahad00rehman@gmail.com",
   whatsapp: "+923059111420",
   github: "https://github.com/consolebyfahad",
@@ -13,28 +15,66 @@ export const personal = {
   profileImage: "/fahad.jpg",
 };
 
+export const hero = {
+  primary:
+    "I'm a Senior Software Engineer with 5+ years of experience building web and mobile products that actually ship — not just sit in a repo.",
+  secondary:
+    "Right now I'm full stack at Looplex and doing frontend / React Native work at Axon Technologies. I build with React, React Native, TypeScript, and Node.js.",
+};
+
 export const about = {
-  headline: "I BUILD INTERFACES, SHIP PRODUCTS, CRAFT EXPERIENCES.",
+  headline: "I TURN APP IDEAS INTO REAL PRODUCTS.",
   paragraphs: [
-    "I'm Fahad, a frontend developer and React Native developer who builds fast web and mobile apps with React, Next.js, and TypeScript. I care about clear UX, clean code, and interfaces that feel intentional.",
-    "As a Frontend Engineer at Axon Technologies, I ship cross-platform web and mobile products with Redux, Expo, and thoughtful UI — turning ideas into interfaces people enjoy using.",
-    "When I'm away from the keyboard, I'm usually exploring new UI patterns, refining side projects, or recharging for the next build.",
+    "I'm Fahad. I take products from the first conversation to something live — React and Next.js on the web, React Native and Expo on mobile, Node.js APIs when there's a backend to build.",
+    "I've shipped admin dashboards, client platforms, and mobile apps on Google Play. I stick around after launch too, when something breaks in production and needs fixing.",
   ],
 };
 
 export const skillGroups = [
   {
-    title: "Frontend Tools",
-    items:
-      "JavaScript (ES6+), TypeScript, React, React Native, Next.js, Redux, Expo, HTML5, CSS3, Git/GitHub",
+    title: "Frontend",
+    items: "React, Next.js, TypeScript, JavaScript, HTML, CSS, Tailwind CSS",
   },
   {
-    title: "Backend Tools",
-    items: "Node.js, REST APIs, Express-style services, API integrations",
+    title: "Mobile",
+    items: "React Native, Expo, iOS, Android, Google Play, React Navigation",
   },
   {
-    title: "UI Libraries",
-    items: "Tailwind CSS, Framer Motion, Responsive Design, Component Systems, Accessibility",
+    title: "Backend & Tools",
+    items: "Node.js, Express.js, REST APIs, Redux, Git, Vercel, Authentication",
+  },
+];
+
+export const achievements = [
+  {
+    title: "Osstel — built end to end",
+    description:
+      "I built the frontend, admin dashboard, and Node.js backend myself and took it to production.",
+  },
+  {
+    title: "Drill on Google Play",
+    description:
+      "I built the React Native app from scratch — bilingual booking, tracking, and a Play Store release.",
+  },
+  {
+    title: "Client work shipped live",
+    description:
+      "I've delivered Panache, Ulexe, Drill, and CrushPoint for clients — from first build through launch and fixes after.",
+  },
+  {
+    title: "Mobile apps I architected",
+    description:
+      "I structure React Native apps with TypeScript, Expo, and Redux so they hold up on real devices.",
+  },
+  {
+    title: "Dashboards & admin tools",
+    description:
+      "I've built admin panels and internal tools that teams actually use — not just landing pages.",
+  },
+  {
+    title: "I own production work",
+    description:
+      "APIs, auth, state, debugging, maintenance — I handle the unglamorous parts too, after the launch hype fades.",
   },
 ];
 
@@ -42,40 +82,40 @@ export const projects = [
   {
     title: "Osstel Platform",
     description:
-      "Personal full-stack build — React, TypeScript, admin dashboard, and backend services, designed and shipped end to end for scalable product workflows.",
-    tags: ["TypeScript", "React", "Node.js", "Vercel"],
+      "A platform for managing product workflows — web app, admin dashboard, and Node.js backend. I built the React/TypeScript frontend, admin tooling, and API layer myself.",
+    tags: ["React", "TypeScript", "Node.js", "REST APIs", "Admin Dashboard"],
     url: "https://osstel.vercel.app",
     github: "https://github.com/consolebyfahad/osstel-web",
   },
   {
     title: "Drill",
     description:
-      "Personal React Native app built from scratch and published on Google Play — home services in Saudi Arabia with booking, tracking, and bilingual English/Arabic support.",
-    tags: ["React Native", "Mobile", "TypeScript", "Play Store"],
+      "Home-services app for Saudi Arabia — plumbing, electrical, AC, handyman bookings. I built the React Native app, bilingual UX, booking flows, and published it to Google Play.",
+    tags: ["React Native", "Expo", "TypeScript", "REST APIs", "Google Play"],
     url: "https://play.google.com/store/apps/details?id=sa.com.drill.app",
     github: null,
   },
   {
     title: "Panache",
     description:
-      "Personal dating product built from concept to live site — verified profiles, open search, and real meets, with a clean web experience at panache.love.",
-    tags: ["React", "Next.js", "TypeScript", "Mobile"],
+      "Dating product built around verified profiles and real meets. I built the Next.js site, set up verification and open search, and shipped it live at panache.love.",
+    tags: ["Next.js", "React", "TypeScript", "Authentication", "Product UI"],
     url: "https://panache.love",
     github: null,
   },
   {
     title: "Ulexe",
     description:
-      "Personal beauty booking platform from scratch to production — find pros, compare prices, and book waxing, nails, and more with instant confirmation.",
-    tags: ["React", "Next.js", "TypeScript", "Booking"],
+      "Beauty booking where users compare prices and book without phone tag. I built the Next.js frontend, booking flow, and filters — concept to live site.",
+    tags: ["Next.js", "React", "TypeScript", "Booking System", "API Integration"],
     url: "https://ulexe.com",
     github: null,
   },
   {
     title: "CrushPoint",
     description:
-      "Personal React Native app built end to end — TypeScript UX, smooth mobile flows, and cross-platform delivery owned from idea to release.",
-    tags: ["TypeScript", "React Native", "Mobile"],
+      "React Native app I built with TypeScript — mobile architecture, screen flows, state, and components from first commit to release-ready builds.",
+    tags: ["React Native", "TypeScript", "Mobile UX", "Cross-platform"],
     url: null,
     github: "https://github.com/consolebyfahad/CrushPoint",
   },
@@ -83,27 +123,35 @@ export const projects = [
 
 export const experience = [
   {
+    title: "Full Stack Engineer",
+    company: "Looplex",
+    period: "Present",
+    description:
+      "I build web and mobile products end to end — React and Next.js frontends, Node.js REST APIs, and production deployments for client work.",
+    tags: ["React", "Next.js", "Node.js", "TypeScript", "REST APIs", "Full Stack"],
+  },
+  {
     title: "Frontend Engineer",
     company: "Axon Technologies",
     period: "Present",
     description:
-      "Frontend and React Native developer building scalable web and mobile apps with React, TypeScript, Redux, and Expo — including responsive UI, state management, and API integrations.",
-    tags: ["React", "React Native", "TypeScript", "Redux", "Expo"],
+      "I build and maintain React and React Native apps for iOS and Android — reusable components, Redux, REST APIs, Expo, and releases that don't fall apart after launch.",
+    tags: ["React", "React Native", "TypeScript", "Redux", "Expo", "REST APIs"],
   },
   {
     title: "Associate Frontend Engineer",
     company: "Techesthe",
-    period: "2023 - 2025",
+    period: "2023 – 2025",
     description:
-      "Frontend and React Native developer building scalable web and mobile apps with React, TypeScript, Redux, and Expo — including responsive UI, state management, and API integrations.",
-    tags: ["React", "TypeScript", "Redux", "Expo"],
+      "I shipped client-facing web and mobile features in React and React Native — component work, API screens, performance fixes, and updates from real user feedback.",
+    tags: ["React", "React Native", "TypeScript", "Redux", "Expo"],
   },
   {
     title: "Bachelor's in Computer Science",
     company: "University of Central Punjab",
     period: "2017 – 2019",
     description:
-      "Studied software engineering, web technologies, and computer science — foundation for frontend, web, and mobile development with React and React Native.",
+      "Studied software engineering and web technologies — where I picked up the foundations I still use daily with JavaScript, React, and mobile.",
     tags: ["Computer Science", "Software Engineering"],
   },
 ];
@@ -111,44 +159,44 @@ export const experience = [
 export const testimonials = [
   {
     quote:
-      "We needed Osstel live fast, and Fahad delivered. Communication was clear, the admin panel just works, and we didn’t have to chase fixes after launch.",
+      "We needed Osstel live with a working admin panel and backend — Fahad handled the full build. Clear updates, no hand-holding, and the platform has held up since launch.",
     name: "Hassan Ali",
     role: "Client",
     company: "Osstel",
   },
   {
     quote:
-      "Hiring Fahad for Drill was the right call. He handled everything from the app build to Play Store release. Our users love how smooth booking feels in both Arabic and English.",
+      "Fahad took Drill from zero to Google Play. Booking, Arabic/English support, and the overall app quality were exactly what we needed. He understood the product, not just the tickets.",
     name: "Sohaib Aljabawi",
     role: "Client",
     company: "Drill",
   },
   {
     quote:
-      "Fahad understood what we wanted for Panache without endless meetings. The product feels trustworthy, and he kept us updated until it was live.",
+      "Panache needed to feel trustworthy from the first screen. Fahad got that right — verification, search, and the whole flow made sense without us rewriting the brief every week.",
     name: "Sara Malik",
     role: "Client",
     company: "Panache",
   },
   {
     quote:
-      "Working with Fahad on Ulexe was easy. He took our beauty booking idea seriously, shipped on time, and the booking flow is exactly what our customers needed.",
+      "Ulexe was a booking product with a lot of moving parts. Fahad shipped the frontend, got the booking flow working, and stayed responsive when we needed changes before go-live.",
     name: "Nina Ahmed",
     role: "Client",
     company: "Ulexe",
   },
   {
     quote:
-      "Fahad is reliable and detail-oriented. On CrushPoint he owned the mobile UX end to end — we always knew where things stood, and the final app felt polished.",
+      "On CrushPoint, Fahad owned the mobile side properly — structure, UX, and delivery. We always knew where things stood, and the app felt finished, not rushed.",
     name: "Omar Raza",
     role: "Client",
     company: "CrushPoint",
   },
   {
     quote:
-      "Would happily work with Fahad again. He listens, builds what you ask for, and ships without drama. Great experience from kickoff to delivery.",
+      "I've worked with Fahad on multiple projects now. He asks the right questions early, builds what was agreed, and fixes production issues without making it a drama.",
     name: "Bilal Hussain",
     role: "Client",
-    company: "Independent Project",
+    company: "Independent Projects",
   },
 ];

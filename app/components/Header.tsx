@@ -16,21 +16,25 @@ export default function Header() {
       <div className="site-shell flex items-center justify-between py-7 lg:py-8">
         <Magnetic>
           <motion.a
-            href="#lets-talk"
+            href="#work"
             className="btn-outline-light"
             data-cursor-box="true"
             whileTap={{ scale: 0.98 }}
             transition={springSnappy}
           >
-            Let's Meet
+            View My Work
           </motion.a>
         </Magnetic>
 
         <nav className="flex items-center gap-6 sm:gap-10" aria-label="Top links">
           <Magnetic>
-            <span className="text-btn text-[15px] font-medium sm:text-base" data-cursor-box="true">
-              Looplex
-            </span>
+            <a
+              href="#skills"
+              data-cursor-box="true"
+              className="text-btn text-[15px] font-medium sm:text-base"
+            >
+              About
+            </a>
           </Magnetic>
           <Magnetic>
             <a

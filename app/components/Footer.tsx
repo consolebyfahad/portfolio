@@ -34,7 +34,7 @@ export default function Footer() {
         >
           <div className="max-w-2xl">
             <p className="text-xs font-medium uppercase leading-relaxed tracking-[0.14em] text-white/85 sm:text-sm">
-              Got a question, proposal, project, or want to work together on something?
+              Have a project in mind? I&apos;m open to web and mobile work — drop me a line.
             </p>
             <div className="mt-4 flex flex-wrap items-center gap-y-2 text-xs font-medium uppercase tracking-[0.14em] text-white/85 sm:text-sm">
               <Magnetic>
@@ -43,7 +43,7 @@ export default function Footer() {
                   data-cursor-box="true"
                   className="text-btn underline decoration-transparent underline-offset-[6px]"
                 >
-                  Send me an email
+                  Get in touch
                 </a>
               </Magnetic>
             </div>
@@ -78,10 +78,10 @@ export default function Footer() {
         <div className="mt-14 border-t border-white/15 pt-6 sm:mt-18 sm:pt-7">
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
             <p className="text-[11px] font-medium uppercase tracking-[0.16em] text-white/70 sm:text-xs">
-              Copyright {year}
+              © {year} {personal.name}
             </p>
             <p className="text-[11px] font-medium uppercase tracking-[0.12em] text-white/70 sm:text-xs">
-              Need a help in website dm me{" "}
+              Want to chat? Message me on WhatsApp —{" "}
               <a
                 href={whatsappHref}
                 target="_blank"

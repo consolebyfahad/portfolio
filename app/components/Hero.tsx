@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { motion, useMotionValue, useSpring } from "framer-motion";
 import { useRef, type MouseEvent } from "react";
-import { personal } from "../data/portfolio";
+import { hero, personal } from "../data/portfolio";
 import Header from "./Header";
 import { MagneticPortrait } from "./motion/Magnetic";
 import { easeOut, popUpSpring, viewportHero } from "../lib/motion";
@@ -65,13 +65,13 @@ export default function Hero() {
               <a
                 href="#lets-talk"
                 className="hero-portrait-frame group relative block aspect-square w-[min(42vw,200px)] overflow-hidden rounded-[1.75rem] bg-[#2a2a2a] outline-none sm:w-[250px] md:w-[300px] lg:w-[340px]"
-                aria-label="I'm open to work — contact me"
-                data-cursor-label="I'm Open to work — Contact me"
+                aria-label="Open to work — get in touch"
+                data-cursor-label="Open to work — Get in touch"
                 data-cursor-status="true"
               >
                 <Image
                   src={personal.profileImage}
-                  alt={`${personal.name} — Frontend Engineer, React and React Native developer`}
+                  alt={`${personal.name} — Senior Software Engineer, React and React Native`}
                   fill
                   priority
                   sizes="(max-width: 768px) 200px, 340px"
@@ -100,11 +100,7 @@ export default function Hero() {
               visible: { opacity: 1, y: 0, transition: easeOut },
             }}
           >
-            I currently work as a Frontend Engineer at{" "}
-            <span className="underline decoration-white/40 underline-offset-4">
-              {personal.company}
-            </span>
-            , & I'm available for web and mobile work.
+            {hero.primary}
           </motion.p>
           <motion.p
             className="hero-blurb sm:ml-auto sm:text-right"
@@ -113,8 +109,7 @@ export default function Hero() {
               visible: { opacity: 1, y: 0, transition: easeOut },
             }}
           >
-            Focused on interfaces and experiences, working remotely from{" "}
-            {personal.location}.
+            {hero.secondary} I&apos;m based in {personal.location}.
           </motion.p>
         </motion.div>
       </div>
