@@ -19,7 +19,7 @@ export const hero = {
   primary:
     "I'm a Senior Software Engineer with 5+ years of experience building web and mobile products that actually ship — not just sit in a repo.",
   secondary:
-    "Right now I'm full stack at Looplex and doing frontend / React Native work at Axon Technologies. I build with React, React Native, TypeScript, and Node.js.",
+    "Full Stack Engineer at Looplex and Frontend Engineer at Axon Technologies — React, React Native, TypeScript, and Node.js across web, mobile, and APIs.",
 };
 
 export const about = {
@@ -42,39 +42,6 @@ export const skillGroups = [
   {
     title: "Backend & Tools",
     items: "Node.js, Express.js, REST APIs, Redux, Git, Vercel, Authentication",
-  },
-];
-
-export const achievements = [
-  {
-    title: "Osstel — built end to end",
-    description:
-      "I built the frontend, admin dashboard, and Node.js backend myself and took it to production.",
-  },
-  {
-    title: "Drill on Google Play",
-    description:
-      "I built the React Native app from scratch — bilingual booking, tracking, and a Play Store release.",
-  },
-  {
-    title: "Client work shipped live",
-    description:
-      "I've delivered Panache, Ulexe, Drill, and CrushPoint for clients — from first build through launch and fixes after.",
-  },
-  {
-    title: "Mobile apps I architected",
-    description:
-      "I structure React Native apps with TypeScript, Expo, and Redux so they hold up on real devices.",
-  },
-  {
-    title: "Dashboards & admin tools",
-    description:
-      "I've built admin panels and internal tools that teams actually use — not just landing pages.",
-  },
-  {
-    title: "I own production work",
-    description:
-      "APIs, auth, state, debugging, maintenance — I handle the unglamorous parts too, after the launch hype fades.",
   },
 ];
 
