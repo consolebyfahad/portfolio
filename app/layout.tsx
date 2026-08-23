@@ -134,7 +134,7 @@ const jsonLd = {
       worksFor: [
         {
           "@type": "Organization",
-          name: "Looplex",
+          name: "LoopX",
         },
         {
           "@type": "Organization",

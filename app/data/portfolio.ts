@@ -5,7 +5,7 @@ export const personal = {
   bio: "I'm Fahad Ur Rehman, a Senior Software Engineer with 5+ years of experience shipping production web and mobile apps with React, React Native, TypeScript, and Node.js.",
   location: "Lahore, Pakistan",
   company: "Axon Technologies",
-  secondaryCompany: "Looplex",
+  secondaryCompany: "LoopX",
   role: "Senior Software Engineer",
   yearsExperience: "5+",
   email: "fahad00rehman@gmail.com",
@@ -19,11 +19,11 @@ export const hero = {
   primary:
     "I'm a Senior Software Engineer with 5+ years of experience building web and mobile products that actually ship — not just sit in a repo.",
   secondary:
-    "Full Stack Engineer at Looplex and Frontend Engineer at Axon Technologies — React, React Native, TypeScript, and Node.js across web, mobile, and APIs.",
+    "Full Stack Engineer at LoopX and Frontend Engineer at Axon Technologies — React, React Native, TypeScript, and Node.js across web, mobile, and APIs.",
 };
 
 export const about = {
-  headline: "I TURN APP IDEAS INTO REAL PRODUCTS.",
+  headline: "TURN IDEAS INTO REAL PRODUCTS.",
   paragraphs: [
     "I'm Fahad. I take products from the first conversation to something live — React and Next.js on the web, React Native and Expo on mobile, Node.js APIs when there's a backend to build.",
     "I've shipped admin dashboards, client platforms, and mobile apps on Google Play. I stick around after launch too, when something breaks in production and needs fixing.",
@@ -91,7 +91,7 @@ export const projects = [
 export const experience = [
   {
     title: "Full Stack Engineer",
-    company: "Looplex",
+    company: "LoopX",
     period: "Present",
     description:
       "I build web and mobile products end to end — React and Next.js frontends, Node.js REST APIs, and production deployments for client work.",
