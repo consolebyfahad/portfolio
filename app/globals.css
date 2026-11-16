@@ -359,6 +359,13 @@ html.intro-active body {
   font-size: clamp(0.95rem, 1.15vw, 1.05rem);
   line-height: 1.6;
   color: var(--muted);
+  transition: padding 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (min-width: 640px) {
+  .project-row.has-preview:hover .project-row-meta {
+    padding-right: 9rem;
+  }
 }
 
 /* ── Forms ── */

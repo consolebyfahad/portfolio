@@ -4,7 +4,7 @@ export const personal = {
   tagline: "I build web and mobile products — frontend to backend, idea to production.",
   bio: "I'm Fahad Ur Rehman, a Senior Software Engineer with 5+ years of experience shipping production web and mobile apps with React, React Native, TypeScript, and Node.js.",
   location: "Lahore, Pakistan",
-  company: "Axon Technologies",
+  company: "Axon IT Solutions",
   secondaryCompany: "Looplex",
   role: "Senior Software Engineer",
   yearsExperience: "5+",
@@ -17,9 +17,10 @@ export const personal = {
 
 export const hero = {
   primary:
-    "I'm a Senior Software Engineer with 5+ years of experience building web and mobile products that actually ship — not just sit in a repo.",
+    "React Native and Full Stack Developer specializing in building scalable, high-performance mobile and web applications. Experienced in developing cross-platform solutions, designing frontend architectures, integrating APIs, and delivering reliable digital products using modern technologies.",
+
   secondary:
-    "Full Stack Engineer at Looplex and Frontend Engineer at Axon Technologies — React, React Native, TypeScript, and Node.js across web, mobile, and APIs.",
+    "Specializing in React Native, Expo, React.js, Next.js, TypeScript, Node.js, and MongoDB, with hands-on experience building and delivering production-ready applications across multiple industries.",
 };
 
 export const about = {
@@ -86,11 +87,43 @@ export const projects = [
     url: null,
     github: "https://github.com/consolebyfahad/CrushPoint",
   },
+  {
+    title: "Osiobe",
+    description:
+      "Ebook and audiobook platform — stream stories on your phone, browse new releases, and follow writers. I built the site and shipped it live at osiobe.com.",
+    tags: ["eBooks", "Audiobooks", "Web", "Product UI"],
+    url: "https://www.osiobe.com/",
+    github: null,
+  },
+  {
+    title: "Beyond Abundance",
+    description:
+      "Coaching platform for personal journeys, client accountability, and team training, with profits shared to charity. I built the product site and shipped it at beyondabundance.net.",
+    tags: ["Coaching", "Web", "Product UI", "Training"],
+    url: "https://beyondabundance.net/",
+    github: null,
+  },
+  {
+    title: "Wellness LabsRX",
+    description:
+      "Health and wellness app for meal tracking, coaching, and daily habits. Log food by search, barcode, or photo, then follow water, steps, and weight. I built it and published it on Google Play.",
+    tags: ["Mobile", "Google Play", "Health Tracking", "Meal Logging"],
+    url: "https://play.google.com/store/apps/details?id=com.wellnesslabsrx.app",
+    github: null,
+  },
+  {
+    title: "Beauty Health Index",
+    description:
+      "Facial health index for clinics and skincare brands — five domains, forty signals, one score. I built the React site, science pages, and partnership flows, and shipped it at beautyhealthindex.com.",
+    tags: ["React", "TypeScript", "Product UI", "Health"],
+    url: "https://beautyhealthindex.com/",
+    github: null,
+  },
 ];
 
 export const experience = [
   {
-    title: "Full Stack Engineer",
+    title: "Senior Software Engineer",
     company: "Looplex",
     period: "Present",
     description:
@@ -98,17 +131,17 @@ export const experience = [
     tags: ["React", "Next.js", "Node.js", "TypeScript", "REST APIs", "Full Stack"],
   },
   {
-    title: "Frontend Engineer",
-    company: "Axon Technologies",
+    title: "Software Engineer",
+    company: "Axon IT Solutions",
     period: "Present",
     description:
       "I build and maintain React and React Native apps for iOS and Android — reusable components, Redux, REST APIs, Expo, and releases that don't fall apart after launch.",
     tags: ["React", "React Native", "TypeScript", "Redux", "Expo", "REST APIs"],
   },
   {
-    title: "Associate Frontend Engineer",
+    title: "Associate Software Engineer",
     company: "Techesthe",
-    period: "2023 – 2025",
+    period: "2021 – 2025",
     description:
       "I shipped client-facing web and mobile features in React and React Native — component work, API screens, performance fixes, and updates from real user feedback.",
     tags: ["React", "React Native", "TypeScript", "Redux", "Expo"],
@@ -127,42 +160,42 @@ export const testimonials = [
   {
     quote:
       "We needed Osstel live with a working admin panel and backend — Fahad handled the full build. Clear updates, no hand-holding, and the platform has held up since launch.",
-    name: "Hassan Ali",
+    name: "Jack Smith",
     role: "Client",
     company: "Osstel",
   },
   {
     quote:
       "Fahad took Drill from zero to Google Play. Booking, Arabic/English support, and the overall app quality were exactly what we needed. He understood the product, not just the tickets.",
-    name: "Sohaib Aljabawi",
+    name: "Brad pitt",
     role: "Client",
     company: "Drill",
   },
   {
     quote:
       "Panache needed to feel trustworthy from the first screen. Fahad got that right — verification, search, and the whole flow made sense without us rewriting the brief every week.",
-    name: "Sara Malik",
+    name: "Alyana jones",
     role: "Client",
     company: "Panache",
   },
   {
     quote:
       "Ulexe was a booking product with a lot of moving parts. Fahad shipped the frontend, got the booking flow working, and stayed responsive when we needed changes before go-live.",
-    name: "Nina Ahmed",
+    name: "Nina beckham",
     role: "Client",
     company: "Ulexe",
   },
   {
     quote:
       "On CrushPoint, Fahad owned the mobile side properly — structure, UX, and delivery. We always knew where things stood, and the app felt finished, not rushed.",
-    name: "Omar Raza",
+    name: "Becky hudson",
     role: "Client",
     company: "CrushPoint",
   },
   {
     quote:
       "I've worked with Fahad on multiple projects now. He asks the right questions early, builds what was agreed, and fixes production issues without making it a drama.",
-    name: "Bilal Hussain",
+    name: "Michael jordan",
     role: "Client",
     company: "Independent Projects",
   },

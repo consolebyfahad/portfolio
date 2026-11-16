@@ -138,7 +138,7 @@ const jsonLd = {
         },
         {
           "@type": "Organization",
-          name: "Axon Technologies",
+          name: "Axon IT Solutions",
         },
       ],
       knowsAbout: [
